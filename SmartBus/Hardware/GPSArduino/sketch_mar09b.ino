@@ -51,7 +51,7 @@ void loop()   //主循环
           DEBUGSerial.println("AT+CIPSEND");
           delay(3000);
           DEBUGSerial.println("GET /data.php?jd=latitude"+latitude+"&wd=longitude"+longitude);
-          delay(10000);
+          delay(30000);
          }
 
         if(latitude > "")   //当不是空时候打印输出
