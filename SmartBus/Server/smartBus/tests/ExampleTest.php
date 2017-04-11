@@ -1,19 +1,20 @@
 <?php
-
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
+// +----------------------------------------------------------------------
+// | ThinkPHP [ WE CAN DO IT JUST THINK IT ]
+// +----------------------------------------------------------------------
+// | Copyright (c) 2006-2015 http://thinkphp.cn All rights reserved.
+// +----------------------------------------------------------------------
+// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+// +----------------------------------------------------------------------
+// | Author: yunwuxin <448901948@qq.com>
+// +----------------------------------------------------------------------
+namespace tests;
 
 class ExampleTest extends TestCase
 {
-    /**
-     * A basic functional test example.
-     *
-     * @return void
-     */
+
     public function testBasicExample()
     {
-        $this->visit('/')
-             ->see('Laravel 5');
+        $this->visit('/')->see('ThinkPHP');
     }
 }

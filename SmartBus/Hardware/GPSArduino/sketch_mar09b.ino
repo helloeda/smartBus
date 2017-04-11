@@ -50,7 +50,7 @@ void loop()   //主循环
           delay(3000);
           DEBUGSerial.println("AT+CIPSEND");
           delay(3000);
-          DEBUGSerial.println("GET /data.php?jd=latitude"+latitude+"&wd=longitude"+longitude);
+          DEBUGSerial.println("GET /data.php?wd="+latitude+"&jd="+longitude);
           delay(30000);
          }
 
