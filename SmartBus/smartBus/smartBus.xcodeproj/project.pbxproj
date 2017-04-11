@@ -7,68 +7,68 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		64FC14E31E7AB38700D856C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FC14E21E7AB38700D856C7 /* main.m */; };
-		64FC14E61E7AB38700D856C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FC14E51E7AB38700D856C7 /* AppDelegate.m */; };
-		64FC14E91E7AB38700D856C7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FC14E81E7AB38700D856C7 /* ViewController.m */; };
-		64FC14EC1E7AB38700D856C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FC14EA1E7AB38700D856C7 /* Main.storyboard */; };
-		64FC14EE1E7AB38700D856C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64FC14ED1E7AB38700D856C7 /* Assets.xcassets */; };
-		64FC14F11E7AB38700D856C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FC14EF1E7AB38700D856C7 /* LaunchScreen.storyboard */; };
-		64FC14FC1E7AB38700D856C7 /* smartBusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FC14FB1E7AB38700D856C7 /* smartBusTests.m */; };
-		64FC15071E7AB38700D856C7 /* smartBusUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FC15061E7AB38700D856C7 /* smartBusUITests.m */; };
+		64DC4F231E9CFBC700E2377E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DC4F221E9CFBC700E2377E /* main.m */; };
+		64DC4F261E9CFBC700E2377E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DC4F251E9CFBC700E2377E /* AppDelegate.m */; };
+		64DC4F291E9CFBC700E2377E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DC4F281E9CFBC700E2377E /* ViewController.m */; };
+		64DC4F2C1E9CFBC700E2377E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64DC4F2A1E9CFBC700E2377E /* Main.storyboard */; };
+		64DC4F2E1E9CFBC700E2377E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64DC4F2D1E9CFBC700E2377E /* Assets.xcassets */; };
+		64DC4F311E9CFBC700E2377E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64DC4F2F1E9CFBC700E2377E /* LaunchScreen.storyboard */; };
+		64DC4F3C1E9CFBC700E2377E /* smartBusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DC4F3B1E9CFBC700E2377E /* smartBusTests.m */; };
+		64DC4F471E9CFBC700E2377E /* smartBusUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DC4F461E9CFBC700E2377E /* smartBusUITests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		64FC14F81E7AB38700D856C7 /* PBXContainerItemProxy */ = {
+		64DC4F381E9CFBC700E2377E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 64FC14D61E7AB38600D856C7 /* Project object */;
+			containerPortal = 64DC4F161E9CFBC700E2377E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 64FC14DD1E7AB38600D856C7;
+			remoteGlobalIDString = 64DC4F1D1E9CFBC700E2377E;
 			remoteInfo = smartBus;
 		};
-		64FC15031E7AB38700D856C7 /* PBXContainerItemProxy */ = {
+		64DC4F431E9CFBC700E2377E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 64FC14D61E7AB38600D856C7 /* Project object */;
+			containerPortal = 64DC4F161E9CFBC700E2377E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 64FC14DD1E7AB38600D856C7;
+			remoteGlobalIDString = 64DC4F1D1E9CFBC700E2377E;
 			remoteInfo = smartBus;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		64FC14DE1E7AB38700D856C7 /* smartBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		64FC14E21E7AB38700D856C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		64FC14E41E7AB38700D856C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		64FC14E51E7AB38700D856C7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		64FC14E71E7AB38700D856C7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		64FC14E81E7AB38700D856C7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		64FC14EB1E7AB38700D856C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		64FC14ED1E7AB38700D856C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		64FC14F01E7AB38700D856C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		64FC14F21E7AB38700D856C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		64FC14F71E7AB38700D856C7 /* smartBusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = smartBusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		64FC14FB1E7AB38700D856C7 /* smartBusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = smartBusTests.m; sourceTree = "<group>"; };
-		64FC14FD1E7AB38700D856C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		64FC15021E7AB38700D856C7 /* smartBusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = smartBusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		64FC15061E7AB38700D856C7 /* smartBusUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = smartBusUITests.m; sourceTree = "<group>"; };
-		64FC15081E7AB38700D856C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64DC4F1E1E9CFBC700E2377E /* smartBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		64DC4F221E9CFBC700E2377E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		64DC4F241E9CFBC700E2377E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		64DC4F251E9CFBC700E2377E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		64DC4F271E9CFBC700E2377E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		64DC4F281E9CFBC700E2377E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		64DC4F2B1E9CFBC700E2377E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		64DC4F2D1E9CFBC700E2377E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		64DC4F301E9CFBC700E2377E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		64DC4F321E9CFBC700E2377E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64DC4F371E9CFBC700E2377E /* smartBusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = smartBusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		64DC4F3B1E9CFBC700E2377E /* smartBusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = smartBusTests.m; sourceTree = "<group>"; };
+		64DC4F3D1E9CFBC700E2377E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64DC4F421E9CFBC700E2377E /* smartBusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = smartBusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		64DC4F461E9CFBC700E2377E /* smartBusUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = smartBusUITests.m; sourceTree = "<group>"; };
+		64DC4F481E9CFBC700E2377E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		64FC14DB1E7AB38600D856C7 /* Frameworks */ = {
+		64DC4F1B1E9CFBC700E2377E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		64FC14F41E7AB38700D856C7 /* Frameworks */ = {
+		64DC4F341E9CFBC700E2377E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		64FC14FF1E7AB38700D856C7 /* Frameworks */ = {
+		64DC4F3F1E9CFBC700E2377E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -78,64 +78,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		64FC14D51E7AB38600D856C7 = {
+		64DC4F151E9CFBC700E2377E = {
 			isa = PBXGroup;
 			children = (
-				64FC14E01E7AB38700D856C7 /* smartBus */,
-				64FC14FA1E7AB38700D856C7 /* smartBusTests */,
-				64FC15051E7AB38700D856C7 /* smartBusUITests */,
-				64FC14DF1E7AB38700D856C7 /* Products */,
+				64DC4F201E9CFBC700E2377E /* smartBus */,
+				64DC4F3A1E9CFBC700E2377E /* smartBusTests */,
+				64DC4F451E9CFBC700E2377E /* smartBusUITests */,
+				64DC4F1F1E9CFBC700E2377E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		64FC14DF1E7AB38700D856C7 /* Products */ = {
+		64DC4F1F1E9CFBC700E2377E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				64FC14DE1E7AB38700D856C7 /* smartBus.app */,
-				64FC14F71E7AB38700D856C7 /* smartBusTests.xctest */,
-				64FC15021E7AB38700D856C7 /* smartBusUITests.xctest */,
+				64DC4F1E1E9CFBC700E2377E /* smartBus.app */,
+				64DC4F371E9CFBC700E2377E /* smartBusTests.xctest */,
+				64DC4F421E9CFBC700E2377E /* smartBusUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		64FC14E01E7AB38700D856C7 /* smartBus */ = {
+		64DC4F201E9CFBC700E2377E /* smartBus */ = {
 			isa = PBXGroup;
 			children = (
-				64FC14E41E7AB38700D856C7 /* AppDelegate.h */,
-				64FC14E51E7AB38700D856C7 /* AppDelegate.m */,
-				64FC14E71E7AB38700D856C7 /* ViewController.h */,
-				64FC14E81E7AB38700D856C7 /* ViewController.m */,
-				64FC14EA1E7AB38700D856C7 /* Main.storyboard */,
-				64FC14ED1E7AB38700D856C7 /* Assets.xcassets */,
-				64FC14EF1E7AB38700D856C7 /* LaunchScreen.storyboard */,
-				64FC14F21E7AB38700D856C7 /* Info.plist */,
-				64FC14E11E7AB38700D856C7 /* Supporting Files */,
+				64DC4F241E9CFBC700E2377E /* AppDelegate.h */,
+				64DC4F251E9CFBC700E2377E /* AppDelegate.m */,
+				64DC4F271E9CFBC700E2377E /* ViewController.h */,
+				64DC4F281E9CFBC700E2377E /* ViewController.m */,
+				64DC4F2A1E9CFBC700E2377E /* Main.storyboard */,
+				64DC4F2D1E9CFBC700E2377E /* Assets.xcassets */,
+				64DC4F2F1E9CFBC700E2377E /* LaunchScreen.storyboard */,
+				64DC4F321E9CFBC700E2377E /* Info.plist */,
+				64DC4F211E9CFBC700E2377E /* Supporting Files */,
 			);
 			path = smartBus;
 			sourceTree = "<group>";
 		};
-		64FC14E11E7AB38700D856C7 /* Supporting Files */ = {
+		64DC4F211E9CFBC700E2377E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				64FC14E21E7AB38700D856C7 /* main.m */,
+				64DC4F221E9CFBC700E2377E /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		64FC14FA1E7AB38700D856C7 /* smartBusTests */ = {
+		64DC4F3A1E9CFBC700E2377E /* smartBusTests */ = {
 			isa = PBXGroup;
 			children = (
-				64FC14FB1E7AB38700D856C7 /* smartBusTests.m */,
-				64FC14FD1E7AB38700D856C7 /* Info.plist */,
+				64DC4F3B1E9CFBC700E2377E /* smartBusTests.m */,
+				64DC4F3D1E9CFBC700E2377E /* Info.plist */,
 			);
 			path = smartBusTests;
 			sourceTree = "<group>";
 		};
-		64FC15051E7AB38700D856C7 /* smartBusUITests */ = {
+		64DC4F451E9CFBC700E2377E /* smartBusUITests */ = {
 			isa = PBXGroup;
 			children = (
-				64FC15061E7AB38700D856C7 /* smartBusUITests.m */,
-				64FC15081E7AB38700D856C7 /* Info.plist */,
+				64DC4F461E9CFBC700E2377E /* smartBusUITests.m */,
+				64DC4F481E9CFBC700E2377E /* Info.plist */,
 			);
 			path = smartBusUITests;
 			sourceTree = "<group>";
@@ -143,13 +143,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		64FC14DD1E7AB38600D856C7 /* smartBus */ = {
+		64DC4F1D1E9CFBC700E2377E /* smartBus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 64FC150B1E7AB38700D856C7 /* Build configuration list for PBXNativeTarget "smartBus" */;
+			buildConfigurationList = 64DC4F4B1E9CFBC700E2377E /* Build configuration list for PBXNativeTarget "smartBus" */;
 			buildPhases = (
-				64FC14DA1E7AB38600D856C7 /* Sources */,
-				64FC14DB1E7AB38600D856C7 /* Frameworks */,
-				64FC14DC1E7AB38600D856C7 /* Resources */,
+				64DC4F1A1E9CFBC700E2377E /* Sources */,
+				64DC4F1B1E9CFBC700E2377E /* Frameworks */,
+				64DC4F1C1E9CFBC700E2377E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -157,72 +157,74 @@
 			);
 			name = smartBus;
 			productName = smartBus;
-			productReference = 64FC14DE1E7AB38700D856C7 /* smartBus.app */;
+			productReference = 64DC4F1E1E9CFBC700E2377E /* smartBus.app */;
 			productType = "com.apple.product-type.application";
 		};
-		64FC14F61E7AB38700D856C7 /* smartBusTests */ = {
+		64DC4F361E9CFBC700E2377E /* smartBusTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 64FC150E1E7AB38700D856C7 /* Build configuration list for PBXNativeTarget "smartBusTests" */;
+			buildConfigurationList = 64DC4F4E1E9CFBC700E2377E /* Build configuration list for PBXNativeTarget "smartBusTests" */;
 			buildPhases = (
-				64FC14F31E7AB38700D856C7 /* Sources */,
-				64FC14F41E7AB38700D856C7 /* Frameworks */,
-				64FC14F51E7AB38700D856C7 /* Resources */,
+				64DC4F331E9CFBC700E2377E /* Sources */,
+				64DC4F341E9CFBC700E2377E /* Frameworks */,
+				64DC4F351E9CFBC700E2377E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				64FC14F91E7AB38700D856C7 /* PBXTargetDependency */,
+				64DC4F391E9CFBC700E2377E /* PBXTargetDependency */,
 			);
 			name = smartBusTests;
 			productName = smartBusTests;
-			productReference = 64FC14F71E7AB38700D856C7 /* smartBusTests.xctest */;
+			productReference = 64DC4F371E9CFBC700E2377E /* smartBusTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		64FC15011E7AB38700D856C7 /* smartBusUITests */ = {
+		64DC4F411E9CFBC700E2377E /* smartBusUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 64FC15111E7AB38700D856C7 /* Build configuration list for PBXNativeTarget "smartBusUITests" */;
+			buildConfigurationList = 64DC4F511E9CFBC700E2377E /* Build configuration list for PBXNativeTarget "smartBusUITests" */;
 			buildPhases = (
-				64FC14FE1E7AB38700D856C7 /* Sources */,
-				64FC14FF1E7AB38700D856C7 /* Frameworks */,
-				64FC15001E7AB38700D856C7 /* Resources */,
+				64DC4F3E1E9CFBC700E2377E /* Sources */,
+				64DC4F3F1E9CFBC700E2377E /* Frameworks */,
+				64DC4F401E9CFBC700E2377E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				64FC15041E7AB38700D856C7 /* PBXTargetDependency */,
+				64DC4F441E9CFBC700E2377E /* PBXTargetDependency */,
 			);
 			name = smartBusUITests;
 			productName = smartBusUITests;
-			productReference = 64FC15021E7AB38700D856C7 /* smartBusUITests.xctest */;
+			productReference = 64DC4F421E9CFBC700E2377E /* smartBusUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		64FC14D61E7AB38600D856C7 /* Project object */ = {
+		64DC4F161E9CFBC700E2377E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Eda;
 				TargetAttributes = {
-					64FC14DD1E7AB38600D856C7 = {
-						CreatedOnToolsVersion = 8.2.1;
+					64DC4F1D1E9CFBC700E2377E = {
+						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = 49F5B7ZSA7;
 						ProvisioningStyle = Automatic;
 					};
-					64FC14F61E7AB38700D856C7 = {
-						CreatedOnToolsVersion = 8.2.1;
+					64DC4F361E9CFBC700E2377E = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 49F5B7ZSA7;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 64FC14DD1E7AB38600D856C7;
+						TestTargetID = 64DC4F1D1E9CFBC700E2377E;
 					};
-					64FC15011E7AB38700D856C7 = {
-						CreatedOnToolsVersion = 8.2.1;
+					64DC4F411E9CFBC700E2377E = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 49F5B7ZSA7;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 64FC14DD1E7AB38600D856C7;
+						TestTargetID = 64DC4F1D1E9CFBC700E2377E;
 					};
 				};
 			};
-			buildConfigurationList = 64FC14D91E7AB38600D856C7 /* Build configuration list for PBXProject "smartBus" */;
+			buildConfigurationList = 64DC4F191E9CFBC700E2377E /* Build configuration list for PBXProject "smartBus" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -230,37 +232,37 @@
 				en,
 				Base,
 			);
-			mainGroup = 64FC14D51E7AB38600D856C7;
-			productRefGroup = 64FC14DF1E7AB38700D856C7 /* Products */;
+			mainGroup = 64DC4F151E9CFBC700E2377E;
+			productRefGroup = 64DC4F1F1E9CFBC700E2377E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				64FC14DD1E7AB38600D856C7 /* smartBus */,
-				64FC14F61E7AB38700D856C7 /* smartBusTests */,
-				64FC15011E7AB38700D856C7 /* smartBusUITests */,
+				64DC4F1D1E9CFBC700E2377E /* smartBus */,
+				64DC4F361E9CFBC700E2377E /* smartBusTests */,
+				64DC4F411E9CFBC700E2377E /* smartBusUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		64FC14DC1E7AB38600D856C7 /* Resources */ = {
+		64DC4F1C1E9CFBC700E2377E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64FC14F11E7AB38700D856C7 /* LaunchScreen.storyboard in Resources */,
-				64FC14EE1E7AB38700D856C7 /* Assets.xcassets in Resources */,
-				64FC14EC1E7AB38700D856C7 /* Main.storyboard in Resources */,
+				64DC4F311E9CFBC700E2377E /* LaunchScreen.storyboard in Resources */,
+				64DC4F2E1E9CFBC700E2377E /* Assets.xcassets in Resources */,
+				64DC4F2C1E9CFBC700E2377E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		64FC14F51E7AB38700D856C7 /* Resources */ = {
+		64DC4F351E9CFBC700E2377E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		64FC15001E7AB38700D856C7 /* Resources */ = {
+		64DC4F401E9CFBC700E2377E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -270,60 +272,60 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		64FC14DA1E7AB38600D856C7 /* Sources */ = {
+		64DC4F1A1E9CFBC700E2377E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64FC14E91E7AB38700D856C7 /* ViewController.m in Sources */,
-				64FC14E61E7AB38700D856C7 /* AppDelegate.m in Sources */,
-				64FC14E31E7AB38700D856C7 /* main.m in Sources */,
+				64DC4F291E9CFBC700E2377E /* ViewController.m in Sources */,
+				64DC4F261E9CFBC700E2377E /* AppDelegate.m in Sources */,
+				64DC4F231E9CFBC700E2377E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		64FC14F31E7AB38700D856C7 /* Sources */ = {
+		64DC4F331E9CFBC700E2377E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64FC14FC1E7AB38700D856C7 /* smartBusTests.m in Sources */,
+				64DC4F3C1E9CFBC700E2377E /* smartBusTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		64FC14FE1E7AB38700D856C7 /* Sources */ = {
+		64DC4F3E1E9CFBC700E2377E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64FC15071E7AB38700D856C7 /* smartBusUITests.m in Sources */,
+				64DC4F471E9CFBC700E2377E /* smartBusUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		64FC14F91E7AB38700D856C7 /* PBXTargetDependency */ = {
+		64DC4F391E9CFBC700E2377E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 64FC14DD1E7AB38600D856C7 /* smartBus */;
-			targetProxy = 64FC14F81E7AB38700D856C7 /* PBXContainerItemProxy */;
+			target = 64DC4F1D1E9CFBC700E2377E /* smartBus */;
+			targetProxy = 64DC4F381E9CFBC700E2377E /* PBXContainerItemProxy */;
 		};
-		64FC15041E7AB38700D856C7 /* PBXTargetDependency */ = {
+		64DC4F441E9CFBC700E2377E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 64FC14DD1E7AB38600D856C7 /* smartBus */;
-			targetProxy = 64FC15031E7AB38700D856C7 /* PBXContainerItemProxy */;
+			target = 64DC4F1D1E9CFBC700E2377E /* smartBus */;
+			targetProxy = 64DC4F431E9CFBC700E2377E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		64FC14EA1E7AB38700D856C7 /* Main.storyboard */ = {
+		64DC4F2A1E9CFBC700E2377E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				64FC14EB1E7AB38700D856C7 /* Base */,
+				64DC4F2B1E9CFBC700E2377E /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		64FC14EF1E7AB38700D856C7 /* LaunchScreen.storyboard */ = {
+		64DC4F2F1E9CFBC700E2377E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				64FC14F01E7AB38700D856C7 /* Base */,
+				64DC4F301E9CFBC700E2377E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -331,11 +333,12 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		64FC15091E7AB38700D856C7 /* Debug */ = {
+		64DC4F491E9CFBC700E2377E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -371,7 +374,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -379,11 +382,12 @@
 			};
 			name = Debug;
 		};
-		64FC150A1E7AB38700D856C7 /* Release */ = {
+		64DC4F4A1E9CFBC700E2377E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -413,7 +417,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -421,7 +425,7 @@
 			};
 			name = Release;
 		};
-		64FC150C1E7AB38700D856C7 /* Debug */ = {
+		64DC4F4C1E9CFBC700E2377E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -433,7 +437,7 @@
 			};
 			name = Debug;
 		};
-		64FC150D1E7AB38700D856C7 /* Release */ = {
+		64DC4F4D1E9CFBC700E2377E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -445,10 +449,11 @@
 			};
 			name = Release;
 		};
-		64FC150F1E7AB38700D856C7 /* Debug */ = {
+		64DC4F4F1E9CFBC700E2377E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 49F5B7ZSA7;
 				INFOPLIST_FILE = smartBusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eda.smartBusTests;
@@ -457,10 +462,11 @@
 			};
 			name = Debug;
 		};
-		64FC15101E7AB38700D856C7 /* Release */ = {
+		64DC4F501E9CFBC700E2377E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 49F5B7ZSA7;
 				INFOPLIST_FILE = smartBusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eda.smartBusTests;
@@ -469,9 +475,10 @@
 			};
 			name = Release;
 		};
-		64FC15121E7AB38700D856C7 /* Debug */ = {
+		64DC4F521E9CFBC700E2377E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 49F5B7ZSA7;
 				INFOPLIST_FILE = smartBusUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eda.smartBusUITests;
@@ -480,9 +487,10 @@
 			};
 			name = Debug;
 		};
-		64FC15131E7AB38700D856C7 /* Release */ = {
+		64DC4F531E9CFBC700E2377E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 49F5B7ZSA7;
 				INFOPLIST_FILE = smartBusUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eda.smartBusUITests;
@@ -494,40 +502,40 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		64FC14D91E7AB38600D856C7 /* Build configuration list for PBXProject "smartBus" */ = {
+		64DC4F191E9CFBC700E2377E /* Build configuration list for PBXProject "smartBus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				64FC15091E7AB38700D856C7 /* Debug */,
-				64FC150A1E7AB38700D856C7 /* Release */,
+				64DC4F491E9CFBC700E2377E /* Debug */,
+				64DC4F4A1E9CFBC700E2377E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		64FC150B1E7AB38700D856C7 /* Build configuration list for PBXNativeTarget "smartBus" */ = {
+		64DC4F4B1E9CFBC700E2377E /* Build configuration list for PBXNativeTarget "smartBus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				64FC150C1E7AB38700D856C7 /* Debug */,
-				64FC150D1E7AB38700D856C7 /* Release */,
+				64DC4F4C1E9CFBC700E2377E /* Debug */,
+				64DC4F4D1E9CFBC700E2377E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		64FC150E1E7AB38700D856C7 /* Build configuration list for PBXNativeTarget "smartBusTests" */ = {
+		64DC4F4E1E9CFBC700E2377E /* Build configuration list for PBXNativeTarget "smartBusTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				64FC150F1E7AB38700D856C7 /* Debug */,
-				64FC15101E7AB38700D856C7 /* Release */,
+				64DC4F4F1E9CFBC700E2377E /* Debug */,
+				64DC4F501E9CFBC700E2377E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		64FC15111E7AB38700D856C7 /* Build configuration list for PBXNativeTarget "smartBusUITests" */ = {
+		64DC4F511E9CFBC700E2377E /* Build configuration list for PBXNativeTarget "smartBusUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				64FC15121E7AB38700D856C7 /* Debug */,
-				64FC15131E7AB38700D856C7 /* Release */,
+				64DC4F521E9CFBC700E2377E /* Debug */,
+				64DC4F531E9CFBC700E2377E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 64FC14D61E7AB38600D856C7 /* Project object */;
+	rootObject = 64DC4F161E9CFBC700E2377E /* Project object */;
 }

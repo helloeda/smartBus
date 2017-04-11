@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0820"
+   LastUpgradeVersion = "0830"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "64FC14DD1E7AB38600D856C7"
+               BlueprintIdentifier = "64DC4F1D1E9CFBC700E2377E"
                BuildableName = "smartBus.app"
                BlueprintName = "smartBus"
                ReferencedContainer = "container:smartBus.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "64FC14F61E7AB38700D856C7"
+               BlueprintIdentifier = "64DC4F361E9CFBC700E2377E"
                BuildableName = "smartBusTests.xctest"
                BlueprintName = "smartBusTests"
                ReferencedContainer = "container:smartBus.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "64FC15011E7AB38700D856C7"
+               BlueprintIdentifier = "64DC4F411E9CFBC700E2377E"
                BuildableName = "smartBusUITests.xctest"
                BlueprintName = "smartBusUITests"
                ReferencedContainer = "container:smartBus.xcodeproj">
@@ -52,7 +52,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "64FC14DD1E7AB38600D856C7"
+            BlueprintIdentifier = "64DC4F1D1E9CFBC700E2377E"
             BuildableName = "smartBus.app"
             BlueprintName = "smartBus"
             ReferencedContainer = "container:smartBus.xcodeproj">
@@ -75,7 +75,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "64FC14DD1E7AB38600D856C7"
+            BlueprintIdentifier = "64DC4F1D1E9CFBC700E2377E"
             BuildableName = "smartBus.app"
             BlueprintName = "smartBus"
             ReferencedContainer = "container:smartBus.xcodeproj">
@@ -94,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "64FC14DD1E7AB38600D856C7"
+            BlueprintIdentifier = "64DC4F1D1E9CFBC700E2377E"
             BuildableName = "smartBus.app"
             BlueprintName = "smartBus"
             ReferencedContainer = "container:smartBus.xcodeproj">
