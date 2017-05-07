@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="120.24.71.38">
+  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="smartBus" autoUploadExternalChanges="true">
     <serverData>
-      <paths name="120.24.71.38">
+      <paths name="smartBus">
         <serverdata>
           <mappings>
-            <mapping deploy="smartBus" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/smartBus" local="$PROJECT_DIR$" web="" />
           </mappings>
         </serverdata>
       </paths>
     </serverData>
+    <option name="myAutoUpload" value="ON_EXPLICIT_SAVE" />
   </component>
 </project>

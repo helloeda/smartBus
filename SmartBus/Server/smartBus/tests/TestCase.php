@@ -1,16 +1,25 @@
 <?php
-// +----------------------------------------------------------------------
-// | ThinkPHP [ WE CAN DO IT JUST THINK IT ]
-// +----------------------------------------------------------------------
-// | Copyright (c) 2006-2015 http://thinkphp.cn All rights reserved.
-// +----------------------------------------------------------------------
-// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
-// +----------------------------------------------------------------------
-// | Author: yunwuxin <448901948@qq.com>
-// +----------------------------------------------------------------------
-namespace tests;
 
-class TestCase extends \think\testing\TestCase
+class TestCase extends Illuminate\Foundation\Testing\TestCase
 {
+    /**
+     * The base URL to use while testing the application.
+     *
+     * @var string
+     */
     protected $baseUrl = 'http://localhost';
+
+    /**
+     * Creates the application.
+     *
+     * @return \Illuminate\Foundation\Application
+     */
+    public function createApplication()
+    {
+        $app = require __DIR__.'/../bootstrap/app.php';
+
+        $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+
+        return $app;
+    }
 }

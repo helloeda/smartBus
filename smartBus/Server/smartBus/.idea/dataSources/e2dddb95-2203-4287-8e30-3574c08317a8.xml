@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - smart_bus@127.0.0.1">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="smart_bus">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <schema id="3" name="laravel"/>
+    <schema id="4" name="minfo"/>
+    <schema id="5" name="muyucloud"/>
+    <schema id="6" name="mysql"/>
+    <schema id="7" name="performance_schema"/>
+    <schema id="8" name="sys"/>
+    <schema id="9" name="hhxc"/>
+    <table id="10" parent="1" name="bus"/>
+    <table id="11" parent="1" name="current"/>
+    <table id="12" parent="1" name="lostthing"/>
+    <table id="13" parent="1" name="notification"/>
+    <table id="14" parent="1" name="route"/>
+    <table id="15" parent="1" name="stop"/>
+    <table id="16" parent="1" name="suggest"/>
+    <column id="17" parent="10" name="bus_id">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="18" parent="10" name="bus_no">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="19" parent="10" name="bus_driver">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="20" parent="10" name="bus_route">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="21" parent="10" name="bus_capacity">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="22" parent="10" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="23" parent="10" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <key id="24" parent="10" name="PRIMARY">
+      <columns>bus_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="25" parent="11" name="current_id">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="26" parent="11" name="current_bus">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="27" parent="11" name="current_passenger">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="28" parent="11" name="current_longitude">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="29" parent="11" name="current_latitude">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="30" parent="11" name="current_direction">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(1)|0</data-type>
+    </column>
+    <column id="31" parent="11" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="32" parent="11" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <key id="33" parent="11" name="PRIMARY">
+      <columns>current_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="34" parent="12" name="lostthing_id">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="35" parent="12" name="lostthing_title">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="36" parent="12" name="lostthing_content">
+      <mandatory>1</mandatory>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="37" parent="12" name="lostthing_author">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="38" parent="12" name="lostthing_type">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(1)|0</data-type>
+    </column>
+    <column id="39" parent="12" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="40" parent="12" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <key id="41" parent="12" name="PRIMARY">
+      <columns>lostthing_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="42" parent="13" name="notification_id">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="43" parent="13" name="notification_title">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="44" parent="13" name="notification_content">
+      <mandatory>1</mandatory>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="45" parent="13" name="notification_author">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="46" parent="13" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="47" parent="13" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <key id="48" parent="13" name="PRIMARY">
+      <columns>notification_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="49" parent="14" name="route_id">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="50" parent="14" name="route_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="51" parent="14" name="route_stop_list">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="52" parent="14" name="route_start_time">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="53" parent="14" name="route_end_time">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="54" parent="14" name="route_price">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="55" parent="14" name="route_company">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="56" parent="14" name="route_length">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="57" parent="14" name="updated_at">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="58" parent="14" name="created_at">
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="59" parent="14" name="PRIMARY">
+      <columns>route_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="60" parent="15" name="stop_id">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="61" parent="15" name="stop_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="62" parent="15" name="stop_longitude">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="63" parent="15" name="stop_latitude">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="64" parent="15" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="65" parent="15" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <key id="66" parent="15" name="PRIMARY">
+      <columns>stop_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="67" parent="16" name="suggest_id">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="68" parent="16" name="suggest_title">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="69" parent="16" name="suggest_content">
+      <mandatory>1</mandatory>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="70" parent="16" name="suggest_author">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="71" parent="16" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="72" parent="16" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <key id="73" parent="16" name="PRIMARY">
+      <columns>suggest_id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>

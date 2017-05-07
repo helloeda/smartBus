@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="60270e80-143f-414b-9130-61cb30b34cc1" name="120.24.71.38" url="http://120.24.71.38">
+      <webServer id="7c95cb10-cddc-4c41-9ff4-c9f71b32ed86" name="smartBus" url="http://smartbus.eda.im">
         <fileTransfer host="120.24.71.38" port="22" rootFolder="/var/www" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
