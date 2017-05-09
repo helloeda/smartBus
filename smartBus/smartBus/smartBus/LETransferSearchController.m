@@ -6,67 +6,68 @@
 //  Copyright © 2017年 Eda. All rights reserved.
 //
 #import "AppDelegate.h"
-#import "LEHomeTableViewController.h"
-#import "LESearchTableViewCell.h"
+#import "LETransferSearchController.h"
+#import "LEStopTableViewCell.h"
 #import "HCSortString.h"
 #import "ZYPinYinSearch.h"
 #import <objc/runtime.h>
-#import "LEBusViewController.h"
+#import "LEStopMapController.h"
 #import "MBProgressHUD+MJ.h"
 #define kColor          [UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1];
 
 
-@implementation BusRoute
+@implementation SearchBusStop
 
 + (NSMutableArray *)getModelData {
- 
+    
     
     NSString *home = NSHomeDirectory();
     NSString *docPath = [home stringByAppendingPathComponent:@"Documents"];
-    NSString *filepath = [docPath stringByAppendingPathComponent:@"route.plist"];
+    NSString *filepath = [docPath stringByAppendingPathComponent:@"stop.plist"];
     //从沙盒读取
     NSArray *arrayDict = [NSArray arrayWithContentsOfFile:filepath];
-   
+    
     if(arrayDict.count == 0)
     {
-        NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"plist"];
+        NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"stop" ofType:@"plist"];
         arrayDict = [NSArray arrayWithContentsOfFile:plistPath];
     }
     
     NSMutableArray *ary = [NSMutableArray new];
- 
+    
     for (NSInteger index = 0; index < arrayDict.count;index++){
-        BusRoute *route = [BusRoute new];
-        route.searchImg = [UIImage imageNamed:@"home_bus"];
-        route.searchTitle = arrayDict[index][@"route_name"];
-        route.searchId = arrayDict[index][@"route_id"];
-        [ary addObject:route];
+        SearchBusStop *stop = [SearchBusStop new];
+        stop.searchImg = [UIImage imageNamed:@"stop_site"];
+        stop.searchTitle = arrayDict[index][@"stop_name"];
+        stop.searchId = arrayDict[index][@"stop_id"];
+        [ary addObject:stop];
     }
     return ary;
 }
 
 @end
 
-@interface LEHomeTableViewController ()<UISearchResultsUpdating>
+@interface LETransferSearchController ()<UISearchResultsUpdating>
 
-@property (strong, nonatomic) BusRoute *route;
+@property (strong, nonatomic) SearchBusStop *stop;
 @property (strong, nonatomic) UISearchController *searchController;
 @property (strong, nonatomic) NSArray *ary;
 @property (strong, nonatomic) NSMutableArray *dataSource;/**<排序前的整个数据源*/
 @property (strong, nonatomic) NSDictionary *allDataSource;/**<排序后的整个数据源*/
 @property (strong, nonatomic) NSMutableArray *searchDataSource;/**<搜索结果数据源*/
 @property (strong, nonatomic) NSArray *indexDataSource;/**<索引数据源*/
-@property (nonatomic, strong) NSArray *arrayRoute;
+@property (nonatomic, strong) NSArray *arrayStop;
 
 @end
 
-@implementation LEHomeTableViewController 
+@implementation LETransferSearchController
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self loadRoute];
+    [self loadStop];
     [self getData];
+    self.searchController.active = NO;
     self.searchController.delegate = self;
     self.tableView.showsVerticalScrollIndicator = FALSE;
     self.tableView.backgroundColor = kColor;
@@ -75,8 +76,8 @@
 
 #pragma mark - -------
 - (void)getData {
-    _dataSource = [BusRoute getModelData];
-  
+    _dataSource = [SearchBusStop getModelData];
+    
     _allDataSource = [HCSortString sortAndGroupForArray:_dataSource PropertyName:@"searchTitle"];
     _indexDataSource = [HCSortString sortForStringAry:[_allDataSource allKeys]];
     _searchDataSource = [NSMutableArray new];
@@ -88,7 +89,7 @@
         _searchController.searchResultsUpdater = self;
         _searchController.dimsBackgroundDuringPresentation = NO;
         _searchController.hidesNavigationBarDuringPresentation = YES;
-        _searchController.searchBar.placeholder = @"输入公交线路";
+        _searchController.searchBar.placeholder = @"输入公交站名称";
         [_searchController.searchBar sizeToFit];
     }
     return _searchController;
@@ -111,26 +112,10 @@
         return _searchDataSource.count;
     }
 }
-//头部索引标题
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-//    if (!self.searchController.active) {
-//        return _indexDataSource[section];
-//    }else {
-//        return nil;
-//    }
-//}
-//右侧索引列表
-//- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-//    if (!self.searchController.active) {
-//        return _indexDataSource;
-//    }else {
-//        return nil;
-//    }
-//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-     LESearchTableViewCell *cell = [LESearchTableViewCell searchTableViewCellWithTableView:tableView];
+    LEStopTableViewCell  *cell = [LEStopTableViewCell stopTableViewCellWithTableView:tableView];
     
     
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
@@ -139,49 +124,32 @@
     
     if (!self.searchController.active) {
         NSArray *value = [_allDataSource objectForKey:_indexDataSource[indexPath.section]];
-        _route = value[indexPath.row];
+        _stop = value[indexPath.row];
     }else{
-        _route = _searchDataSource[indexPath.row];
+        _stop = _searchDataSource[indexPath.row];
     }
-    [cell configCellWithModel:_route];
-    [self loadRouteDetail:_route.searchId];
+    [cell configCellWithModel:_stop];
+    [self loadStopDetail:_stop.searchId];
     return cell;
 }
-//索引点击事件
-//- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
-////    [tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:index] atScrollPosition:UITableViewScrollPositionTop animated:YES];
-////    return index;
-//    
-//
-//
-//
-//        UIStoryboard *story=[UIStoryboard  storyboardWithName:@"Main" bundle:nil];
-//        LEBusViewController *homeDetailVC = [story instantiateViewControllerWithIdentifier:@"busDetail"];
-//    
-//        [self.navigationController pushViewController:homeDetailVC animated:YES];
-//    return 1;
-//    
-//
-//
-//}
 
 #pragma mark - Table View Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (!self.searchController.active) {
         NSArray *value = [_allDataSource objectForKey:_indexDataSource[indexPath.section]];
-        _route = value[indexPath.row];
+        _stop = value[indexPath.row];
     }else{
-        _route = _searchDataSource[indexPath.row];
+        _stop = _searchDataSource[indexPath.row];
     }
-//    self.block(_student.searchTitle);
-  
+    //    self.block(_student.searchTitle);
+    
     UIStoryboard *story=[UIStoryboard  storyboardWithName:@"Main" bundle:nil];
-    LEBusViewController *busDetailVC = [story instantiateViewControllerWithIdentifier:@"busDetail"];
-    busDetailVC.routeId = _route.searchId;
-    [self.navigationController pushViewController:busDetailVC animated:YES];
+    LEStopMapController *stopMapVC = [story instantiateViewControllerWithIdentifier:@"stopMap"];
+    stopMapVC.stopId = _stop.searchId;
+    [self.navigationController pushViewController:stopMapVC  animated:YES];
     
     self.searchController.active = NO;
-    //[self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 #pragma mark - UISearchDelegate
@@ -206,11 +174,11 @@
 }
 
 
--(void) loadRoute{
+-(void) loadStop{
     NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
     // 1.设置请求路径
-    NSURL *URL=[NSURL URLWithString:@"http://smartbus.eda.im/get/route/list"];
+    NSURL *URL=[NSURL URLWithString:@"http://smartbus.eda.im/get/stop/list"];
     
     // 2.创建请求对象
     NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:URL];//默认为get请求
@@ -224,7 +192,7 @@
     //沙盒路径
     NSString *home = NSHomeDirectory();
     NSString *docPath = [home stringByAppendingPathComponent:@"Documents"];
-    NSString *filepath = [docPath stringByAppendingPathComponent:@"route.plist"];
+    NSString *filepath = [docPath stringByAppendingPathComponent:@"stop.plist"];
     
     
     NSURLSessionDataTask * dataTask =[defaultSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *connectionError) {
@@ -235,7 +203,7 @@
         {
             //从沙盒读取
             arrayDict = [NSArray arrayWithContentsOfFile:filepath];
-            self.arrayRoute = arrayDict;
+            self.arrayStop = arrayDict;
             
         }
         else {
@@ -250,22 +218,22 @@
             }
             //从沙盒读取
             arrayDict = [NSArray arrayWithContentsOfFile:filepath];
-            self.arrayRoute = arrayDict;
+            self.arrayStop = arrayDict;
         }
         
     }];
     [dataTask resume];
-
+    
 }
 
 
--(void) loadRouteDetail: (NSNumber*)routeid{
+-(void) loadStopDetail: (NSNumber*)stopId{
     //沙盒路径
     NSString *home = NSHomeDirectory();
     NSString *docPath = [home stringByAppendingPathComponent:@"Documents"];
-    NSString *fileName = [NSString stringWithFormat:@"route_detail_%@.plist", routeid];
+    NSString *fileName = [NSString stringWithFormat:@"stop_detail_%@.plist", stopId];
     NSString *filepath = [docPath stringByAppendingPathComponent:fileName];
-   
+    
     BOOL exist = [[NSFileManager defaultManager] fileExistsAtPath:filepath];
     
     if(!exist){
@@ -273,7 +241,7 @@
         NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
         // 1.设置请求路径
         
-        NSString *originUrl = [NSString stringWithFormat:@"http://smartbus.eda.im/get/route/detail/%@",routeid];
+        NSString *originUrl = [NSString stringWithFormat:@"http://smartbus.eda.im/get/stop/detail/%@",stopId];
         NSURL *URL=[NSURL URLWithString:originUrl];
         
         // 2.创建请求对象
@@ -301,19 +269,20 @@
             
         }];
         [dataTask resume];
-
+        
     }
     
-  }
+}
 
 
 
 - (void)didPresentSearchController:(UISearchController *)searchController{
-  self.tabBarController.tabBar.hidden=YES;
+    self.tabBarController.tabBar.hidden=YES;
 }
 
 - (void)didDismissSearchController:(UISearchController *)searchController{
-  self.tabBarController.tabBar.hidden=NO;
+    self.tabBarController.tabBar.hidden=NO;
 }
+
 
 @end

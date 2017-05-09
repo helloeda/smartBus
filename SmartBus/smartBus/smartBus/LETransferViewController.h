@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "LEStopSearchButton.h"
+#import "LETransferSearchController.h"
 @interface LETransferViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet LEStopSearchButton *origin;
+@property (weak, nonatomic) IBOutlet LEStopSearchButton *terminal;
 @end

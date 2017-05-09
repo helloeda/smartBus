@@ -45,21 +45,17 @@
 
 - (void)viewDidLoad {
     
-    
- 
     [super viewDidLoad];
     [self loadRouteDetail];
     
-  
-  
     self.startStopLbl.text = [NSString stringWithFormat:@"%@",[[self.stops firstObject] stop_name]];
     self.endStopLbl.text = [NSString stringWithFormat:@"%@", [[self.stops lastObject] stop_name]];
     
     
-    self.lengthLbl.text = [NSString stringWithFormat:@"全程 %@ 公里", self.routeData[@"route_price"]];
+    self.lengthLbl.text = [NSString stringWithFormat:@"全程 %@ 公里", self.routeData[@"route_length"]];
     self.operateTimeLbl.text = [NSString stringWithFormat:@"时间%@ - %@ 票价 %@元", self.routeData[@"route_start_time"], self.routeData[@"route_end_time"], self.routeData[@"route_price"]];
 
-    
+    self.title = [NSString stringWithFormat:@"%@", self.routeData[@"route_name"]];
 
     self.busTableView.showsVerticalScrollIndicator = FALSE;
     self.busTableView.rowHeight = 75;
@@ -124,6 +120,14 @@
 }
 
 - (IBAction)changeBtn:(id)sender {
+    NSArray* reversedArray = [[self.stops reverseObjectEnumerator] allObjects];
+    self.stops = (NSMutableArray *)reversedArray;
+    self.startStopLbl.text = [NSString stringWithFormat:@"%@",[[self.stops firstObject] stop_name]];
+    self.endStopLbl.text = [NSString stringWithFormat:@"%@", [[self.stops lastObject] stop_name]];
+
+    
+    [self.busTableView reloadData];
+
 }
 - (IBAction)refreshBtn:(id)sender {
 }

@@ -44,6 +44,7 @@ static const NSString *RoutePlanningViewControllerDestinationTitle = @"终点";
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *collectionViewLayout;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
+
 @end
 
 @implementation LETransferViewController
@@ -63,9 +64,12 @@ static const NSString *RoutePlanningViewControllerDestinationTitle = @"终点";
     [self addDefaultAnnotations];
     
     [self searchRoutePlanningBus];  //公交路线开始规划
-    
+    self.navigationController.navigationBarHidden = YES;
     // Do any additional setup after loading the view, typically from a nib.
 }
+
+
+
 
 //初始化xib中的视图
 - (void)setUpXibViews {
@@ -79,7 +83,7 @@ static const NSString *RoutePlanningViewControllerDestinationTitle = @"终点";
 //初始化地图,和搜索API
 - (void)initMapViewAndSearch {
     
-    self.mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height - 80 - 64)];
+    self.mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, 88, self.view.bounds.size.width, self.view.bounds.size.height - 128 - 64)];
     self.mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.mapView.delegate = self;
     [self.view addSubview:self.mapView];
@@ -327,9 +331,9 @@ static const NSString *RoutePlanningViewControllerDestinationTitle = @"终点";
 #pragma -mark Xib btn click
 
 //重新规划按钮点击
-- (IBAction)restartSearch:(id)sender {
-    [self searchRoutePlanningBus];
-}
+//- (IBAction)restartSearch:(id)sender {
+//    [self searchRoutePlanningBus];
+//}
 
 
 - (void)didReceiveMemoryWarning {
@@ -337,6 +341,17 @@ static const NSString *RoutePlanningViewControllerDestinationTitle = @"终点";
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)originAction:(id)sender {
+   
+    LETransferSearchController *SearchVC = [[LETransferSearchController alloc] init];
+   
+    [self.navigationController pushViewController:SearchVC  animated:YES];
+    
+}
+- (IBAction)terminalAction:(id)sender {
+    
+    
+}
 
 @end
 
