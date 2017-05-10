@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "LETransferViewController.h"
 typedef void(^SelectedItem)(NSString *item);
 
 @interface SearchBusStop : NSObject
@@ -23,9 +23,9 @@ typedef void(^SelectedItem)(NSString *item);
 
 
 @interface LETransferSearchController : UITableViewController
-
+@property (assign) BOOL originOrTerminal;
 @property (strong, nonatomic) SelectedItem block;
-
+@property (strong, nonatomic) UISearchController *searchController;
 
 - (void)didSelectedItem:(SelectedItem)block;
 

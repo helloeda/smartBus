@@ -49,22 +49,36 @@ static const NSString *RoutePlanningViewControllerDestinationTitle = @"终点";
 
 @implementation LETransferViewController
 
-- (void)viewDidLoad {
-    
-    [super viewDidLoad];
-    
-    [self setUpXibViews];
-    
-    [self initMapViewAndSearch];
-    
+- (void)viewWillAppear:(BOOL)animated
+{
+  
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
     [self setUpData];
+    [self initMapViewAndSearch];
+    [self setUpXibViews];
     
     [self resetSearchResultAndXibViewsToDefault];
     
     [self addDefaultAnnotations];
-    
+
     [self searchRoutePlanningBus];  //公交路线开始规划
-    self.navigationController.navigationBarHidden = YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+}
+
+
+- (void)viewDidLoad {
+    
+    [super viewDidLoad];
+    
+
+    
+    self.navigationItem.title = @"公交换乘";
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -83,19 +97,28 @@ static const NSString *RoutePlanningViewControllerDestinationTitle = @"终点";
 //初始化地图,和搜索API
 - (void)initMapViewAndSearch {
     
-    self.mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, 88, self.view.bounds.size.width, self.view.bounds.size.height - 128 - 64)];
+    self.mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height - 128 - 100)];
     self.mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.mapView.delegate = self;
     [self.view addSubview:self.mapView];
-    
+    self.mapView.showsUserLocation = YES;
+    self.mapView.userTrackingMode = MAUserTrackingModeFollow;
     self.search = [[AMapSearchAPI alloc] init];
     self.search.delegate = self;
 }
 
 //初始化坐标数据
 - (void)setUpData {
-    self.startCoordinate = CLLocationCoordinate2DMake(39.910267, 116.370888);
-    self.destinationCoordinate = CLLocationCoordinate2DMake(39.989872, 116.481956);
+    
+    double oLong = [self.origin.longitude doubleValue];
+    double oLati = [self.origin.latitude doubleValue];
+    
+    double tLong = [self.terminal.longitude doubleValue];
+    double tLati = [self.terminal.latitude doubleValue];
+    
+    
+    self.startCoordinate = CLLocationCoordinate2DMake(oLati, oLong);
+    self.destinationCoordinate = CLLocationCoordinate2DMake(tLati, tLong);
 }
 
 //初始化或者规划失败后，设置view和数据为默认值
@@ -130,7 +153,7 @@ static const NSString *RoutePlanningViewControllerDestinationTitle = @"终点";
     
     AMapTransitRouteSearchRequest *navi = [[AMapTransitRouteSearchRequest alloc] init];  //公交路径规划请求
     navi.requireExtension = YES;
-    navi.city = @"beijing";  //指定城市，必填
+    navi.city = @"hangzhou";  //指定城市，必填
     
     /* 出发点. */
     navi.origin = [AMapGeoPoint locationWithLatitude:self.startCoordinate.latitude
@@ -344,11 +367,37 @@ static const NSString *RoutePlanningViewControllerDestinationTitle = @"终点";
 - (IBAction)originAction:(id)sender {
    
     LETransferSearchController *SearchVC = [[LETransferSearchController alloc] init];
-   
-    [self.navigationController pushViewController:SearchVC  animated:YES];
+    
+    SearchVC.originOrTerminal =YES;
+    [self.navigationController pushViewController:SearchVC  animated:NO];
     
 }
 - (IBAction)terminalAction:(id)sender {
+    
+    LETransferSearchController *SearchVC = [[LETransferSearchController alloc] init];
+    
+    SearchVC.originOrTerminal =NO;
+    [self.navigationController pushViewController:SearchVC  animated:NO];
+}
+
+- (IBAction)changeAction:(id)sender {
+    
+  
+    CLLocationCoordinate2D tmp = self.startCoordinate;
+   
+    self.startCoordinate = self.destinationCoordinate;
+    
+    self.destinationCoordinate = tmp;
+    
+    NSString *tmpText = self.origin.titleLabel.text;
+    self.origin.titleLabel.text = self.terminal.titleLabel.text;
+    self.terminal.titleLabel.text = tmpText;
+    
+    [self resetSearchResultAndXibViewsToDefault];
+    
+    [self addDefaultAnnotations];
+    
+    [self searchRoutePlanningBus];  //公交路线开始规划
     
     
 }
@@ -360,6 +409,9 @@ static const NSString *RoutePlanningViewControllerDestinationTitle = @"终点";
 /*
 #pragma mark - Navigation
 
+ 
+ 
+ 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].

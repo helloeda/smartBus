@@ -13,6 +13,7 @@
 #import <objc/runtime.h>
 #import "LEStopMapController.h"
 #import "MBProgressHUD+MJ.h"
+
 #define kColor          [UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1];
 
 
@@ -50,7 +51,7 @@
 @interface LETransferSearchController ()<UISearchResultsUpdating>
 
 @property (strong, nonatomic) SearchBusStop *stop;
-@property (strong, nonatomic) UISearchController *searchController;
+
 @property (strong, nonatomic) NSArray *ary;
 @property (strong, nonatomic) NSMutableArray *dataSource;/**<排序前的整个数据源*/
 @property (strong, nonatomic) NSDictionary *allDataSource;/**<排序后的整个数据源*/
@@ -63,16 +64,35 @@
 @implementation LETransferSearchController
 
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = NO;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if (self.searchController.active) {
+        self.searchController.active = NO;
+        [self.searchController.searchBar removeFromSuperview];
+    }
+    self.tabBarController.tabBar.hidden=NO;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadStop];
     [self getData];
-    self.searchController.active = NO;
+    self.navigationItem.title = @"站点搜索";
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];//导航栏字体颜色
+    self.searchController.hidesNavigationBarDuringPresentation = NO;
     self.searchController.delegate = self;
     self.tableView.showsVerticalScrollIndicator = FALSE;
     self.tableView.backgroundColor = kColor;
     [self.tableView setTableHeaderView:self.searchController.searchBar];
 }
+
 
 #pragma mark - -------
 - (void)getData {
@@ -143,14 +163,42 @@
     }
     //    self.block(_student.searchTitle);
     
-    UIStoryboard *story=[UIStoryboard  storyboardWithName:@"Main" bundle:nil];
-    LEStopMapController *stopMapVC = [story instantiateViewControllerWithIdentifier:@"stopMap"];
-    stopMapVC.stopId = _stop.searchId;
-    [self.navigationController pushViewController:stopMapVC  animated:YES];
+//    UIStoryboard *story=[UIStoryboard  storyboardWithName:@"Main" bundle:nil];
+//    LEStopMapController *stopMapVC = [story instantiateViewControllerWithIdentifier:@"stopMap"];
+//    stopMapVC.stopId = _stop.searchId;
+//    [self.navigationController pushViewController:stopMapVC  animated:YES];
     
-    self.searchController.active = NO;
+    //此页面已经存在于self.navigationController.viewControllers中,并且是当前页面的前一页面
+    LETransferViewController *transferVC = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count-2];
+  
     
-}
+    // 1.获得沙盒根路径
+    NSString *home = NSHomeDirectory();
+    // 2.document路径
+    NSString *docPath = [home stringByAppendingPathComponent:@"Documents"];
+    // 3.文件路径
+    NSString *fileName = [NSString stringWithFormat:@"stop_detail_%@.plist", _stop.searchId];
+    NSString *filepath = [docPath stringByAppendingPathComponent:fileName];
+    
+    
+    NSDictionary *stopDetail= [[NSDictionary alloc] initWithContentsOfFile:filepath];
+    if(self.originOrTerminal) {
+        //初始化其属性
+        transferVC.origin.titleLabel.text = [NSString stringWithFormat:@"   从   %@",_stop.searchTitle];
+        transferVC.origin.latitude = stopDetail[@"stop_latitude"];
+        transferVC.origin.longitude = stopDetail[@"stop_longitude"];
+    }
+    else{
+        //初始化其属性
+        transferVC.terminal.titleLabel.text = [NSString stringWithFormat:@"   到   %@",_stop.searchTitle];
+        transferVC.terminal.latitude = stopDetail[@"stop_latitude"];
+        transferVC.terminal.longitude = stopDetail[@"stop_longitude"];
+    }
+         //使用popToViewController返回并传值到上一页面
+    [self.navigationController popToViewController:transferVC animated:true];
+    
+  
+   }
 
 #pragma mark - UISearchDelegate
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
@@ -278,6 +326,7 @@
 
 - (void)didPresentSearchController:(UISearchController *)searchController{
     self.tabBarController.tabBar.hidden=YES;
+    
 }
 
 - (void)didDismissSearchController:(UISearchController *)searchController{

@@ -210,6 +210,8 @@
     self.mapView.delegate = self;
     [self.view addSubview:self.mapView];
     
+    self.mapView.showsUserLocation = YES;
+    self.mapView.userTrackingMode = MAUserTrackingModeFollow;
     self.isLocated = NO;
 }
 
