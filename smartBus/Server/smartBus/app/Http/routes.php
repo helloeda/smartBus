@@ -38,4 +38,9 @@ Route::any('get/route/detail/{routeId?}', 'BusController@getRouteDetailById');
 Route::any('get/stop/list', 'BusController@getStopList');
 Route::any('get/stop/detail/{stopId?}', 'BusController@getStopDetailById');
 
+Route::any('gps', 'BusController@setGps');
+
+Route::any('get/current', 'BusController@getCurrent');
+
+
 //Route::any('get/stop', 'BusController@getStop');

@@ -34,6 +34,7 @@
 {
     _stop = stop;
     self.isHereView.hidden = YES;
+    self.seatLbl.hidden = YES;
     self.stopNameLbl.text = stop.stop_name;
 
 }

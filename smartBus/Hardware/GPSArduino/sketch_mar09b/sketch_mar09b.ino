@@ -46,11 +46,11 @@ void loop()   //主循环
 
         if(latitude > "" && longitude > ""){
           
-          DEBUGSerial.println("AT+CIPSTART=\"TCP\",\"114.215.88.217\",80");
+          DEBUGSerial.println("AT+CIPSTART=\"TCP\",\"smartbus.eda.im\",80");
           delay(3000);
           DEBUGSerial.println("AT+CIPSEND");
           delay(3000);
-          DEBUGSerial.println("GET /data.php?wd="+latitude+"&jd="+longitude);
+          DEBUGSerial.println("GET /gps ?wd="+latitude+"&jd="+longitude);
           delay(30000);
          }
 

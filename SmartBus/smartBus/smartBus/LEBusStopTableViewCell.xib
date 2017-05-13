@@ -40,10 +40,18 @@
                         <rect key="frame" x="52" y="36" width="30" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30/30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6y-3h-IV6">
+                        <rect key="frame" x="90" y="41" width="69" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="isHereView" destination="TfB-nf-jTK" id="U8W-is-gne"/>
+                <outlet property="seatLbl" destination="w6y-3h-IV6" id="TEo-wm-IIt"/>
                 <outlet property="stopNameLbl" destination="sne-cN-H3R" id="hNp-nj-yO9"/>
                 <outlet property="stopNoLbl" destination="kKT-tX-JK9" id="EMH-oc-nua"/>
             </connections>

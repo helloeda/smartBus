@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *isHereView;
 @property (weak, nonatomic) IBOutlet UILabel *stopNoLbl;
 @property (weak, nonatomic) IBOutlet UILabel *stopNameLbl;
+@property (weak, nonatomic) IBOutlet UILabel *seatLbl;
 +(instancetype)busStopTableViewCellWithTableView:(UITableView *)tableView;
 
 @end

@@ -116,4 +116,55 @@ class BusController extends Controller
     }
 
 
+    public function getCurrent() {
+        $res = DB::table('current')->select()->get();
+
+        $result = new LEResult();
+        if (!empty($res))
+        {
+            $result->status = 1;
+        }
+        else {
+            $result->status = 0;
+        }
+        $result->message = $res;
+        return $result->toJson();
+
+    }
+
+    //硬件API
+    public function setGps(Request $request) {
+        $jd = $request->input("jd");
+        $wd = $request->input("wd");
+
+        $jd = substr($jd,0,-1);
+        $wd = substr($wd,0,-1);
+        $fin_jd = floor($jd / 100) + ($jd % 100) / 60 + ($jd - floor($jd)) / 60;
+        $fin_wd = floor($wd / 100) + ($wd % 100) / 60 + ($wd - floor($wd)) / 60;
+
+
+        $data= array(
+            'current_longitude' => $fin_jd,
+            'current_latitude' => $fin_wd,
+
+            'updated_at' => date('Y-m-d H:i:s'),
+        );
+        $res = DB::table('current')->where("bus_id",1)->update($data);
+        $result = new LEResult();
+        if (!empty($res))
+        {
+            $result->status = 1;
+        }
+        else {
+            $result->status = 0;
+        }
+        $result->message = $res;
+        return $result->toJson();
+    }
+
+
+
+
+
+
 }
