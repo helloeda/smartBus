@@ -19,7 +19,9 @@
 @property (weak, nonatomic) IBOutlet UITableView *busTableView;
 - (IBAction)changeBtn:(id)sender;
 @property (nonatomic, strong) NSDictionary *routeData;
+@property (nonatomic, strong) NSDictionary *current;
 @property (nonatomic, strong) NSMutableArray *stops;
+
 @end
 
 
@@ -47,6 +49,11 @@
     
     [super viewDidLoad];
     [self loadRouteDetail];
+    [self loadCurrent];
+    
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:15.0 target:self selector:@selector(loadCurrent) userInfo:nil repeats:YES];
+    
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
     
     self.startStopLbl.text = [NSString stringWithFormat:@"%@",[[self.stops firstObject] stop_name]];
     self.endStopLbl.text = [NSString stringWithFormat:@"%@", [[self.stops lastObject] stop_name]];
@@ -72,9 +79,7 @@
 #pragma mark - 数据源方法
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
     return self.stops.count;
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -87,6 +92,18 @@
     cell.stop = model;
     cell.stopNoLbl.text = [NSString stringWithFormat:@"%ld", indexPath.row + 1];
     cell.selectionStyle =UITableViewCellSelectionStyleNone;
+    
+    if(_current) {
+        for (NSDictionary *tmp in _current) {
+            if(tmp[@"current_stop"] == model.stop_id){
+                cell.isHereView.hidden = NO;
+                cell.seatLbl.hidden = NO;
+                cell.seatLbl.text = [NSString stringWithFormat:@"%@/%@ 💺",tmp[@"current_passenger"],tmp[@"bus_capacity"]];
+            }
+        }
+        
+         }
+    
     //4. 返回cell
     return cell;
 }
@@ -119,16 +136,57 @@
    
 }
 
+
+-(void) loadCurrent{
+    NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
+    // 1.设置请求路径
+    
+    NSString *originUrl = [NSString stringWithFormat:@"http://smartbus.eda.im/get/current/%@",_routeId];
+    NSURL *URL=[NSURL URLWithString:originUrl];
+    
+    // 2.创建请求对象
+    NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:URL];//默认为get请求
+    request.timeoutInterval=5.0;//设置请求超时为5秒
+    request.HTTPMethod=@"POST";//设置请求方法
+    // 3.设置请求体
+    
+    // 4.设置请求头信息
+    [request setValue:@"ios+android" forHTTPHeaderField:@"User-Agent"];
+    
+    //沙盒路径
+    
+    NSURLSessionDataTask * dataTask =[defaultSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *connectionError) {
+        
+        id dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+        NSNumber *status = dict[@"status"];
+        id dictMessage = dict[@"message"];
+        
+        if([status  isEqual: @1])
+        {
+            self.current = dictMessage;
+            [self.busTableView reloadData];
+        }
+        
+    }];
+    [dataTask resume];
+    
+
+
+}
+
 - (IBAction)changeBtn:(id)sender {
     NSArray* reversedArray = [[self.stops reverseObjectEnumerator] allObjects];
     self.stops = (NSMutableArray *)reversedArray;
     self.startStopLbl.text = [NSString stringWithFormat:@"%@",[[self.stops firstObject] stop_name]];
     self.endStopLbl.text = [NSString stringWithFormat:@"%@", [[self.stops lastObject] stop_name]];
 
-    
     [self.busTableView reloadData];
 
 }
 - (IBAction)refreshBtn:(id)sender {
+    [self loadCurrent];
+ 
+
 }
 @end

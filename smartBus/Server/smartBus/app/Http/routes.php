@@ -40,7 +40,7 @@ Route::any('get/stop/detail/{stopId?}', 'BusController@getStopDetailById');
 
 Route::any('gps', 'BusController@setGps');
 
-Route::any('get/current', 'BusController@getCurrent');
+Route::any('get/current/{routeId?}', 'BusController@getCurrent');
 
 
 //Route::any('get/stop', 'BusController@getStop');
