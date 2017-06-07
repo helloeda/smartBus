@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9Ia-k4-YaW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9Ia-k4-YaW">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -194,7 +194,7 @@
             <objects>
                 <navigationController id="4qG-uU-ITr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的" image="mine" id="CXm-Bo-HA6"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DyI-ac-x1P">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="DyI-ac-x1P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -386,7 +386,7 @@
             <objects>
                 <navigationController id="dcr-KV-feU" userLabel="公交信息" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="公交" image="home" id="RoV-UK-amc"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qdr-58-vNF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Qdr-58-vNF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -428,7 +428,7 @@
             <objects>
                 <navigationController id="OKS-Gj-8K4" userLabel="公交换乘" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="换乘" image="transfer" id="cgY-Pf-PEh"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fGA-Cm-o58">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fGA-Cm-o58">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.1058823529" green="0.56470588239999997" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
